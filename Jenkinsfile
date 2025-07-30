@@ -48,6 +48,13 @@ pipeline {
             }
         }
 
+       stage('Rollback Traffic') {
+         steps {
+            bat 'echo blue > traffic_flag.txt'
+            echo "Traffic rolled back to blue"
+        }
+     } 
+
         stage('Mark Standby') {
             steps {
                 echo "${ACTIVE_ENV} is now in standby mode."
