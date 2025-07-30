@@ -42,7 +42,8 @@ pipeline {
         stage('Switch Traffic') {
             steps {
                 script {
-                    bat "scripts\\switch-traffic.bat ${INACTIVE_ENV}"
+                    bat "echo ${env.INACTIVE_ENV} > ${FLAG_FILE}"
+                    echo "Traffic switched to ${env.INACTIVE_ENV}"
                 }
             }
         }
