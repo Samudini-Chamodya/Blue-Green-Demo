@@ -5,7 +5,7 @@ const port = process.env.PORT || 5001;
 const version = process.env.APP_VERSION || '1.0.0';
 
 app.get('/', (req, res) => {
-  res.send(`Running App Version: ${version}`);
+  res.send(`Running App My New Version: ${version}`);
 });
 
 app.listen(port, () => {
